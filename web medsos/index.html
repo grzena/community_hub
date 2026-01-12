@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imporia Social Hub - Beranda</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background: #f0f2f5; color: #333; }
+        .container { width: 90%; max-width: 900px; margin: auto; display: flex; justify-content: space-between; padding-top: 20px; }
+        .main-feed { flex-basis: 65%; }
+        .sidebar { flex-basis: 30%; }
+        .card { background: white; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); overflow: hidden; }
+        .card-header { padding: 15px; font-weight: bold; border-bottom: 1px solid #eee; }
+        .card-content { padding: 15px; }
+        .post-image { width: 100%; height: 250px; object-fit: cover; }
+        .post-footer { padding: 10px 15px; border-top: 1px solid #eee; font-size: 0.9em; color: #0056b3; cursor: pointer; }
+        .profile-pic { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; margin-right: 10px; }
+        .user-info { display: flex; align-items: center; padding: 15px; }
+    </style>
+</head>
+<body>
+
+    <header style="background: #0056b3; color: white; padding: 10px 0; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+        <h2>Imporia Social Hub</h2>
+    </header>
+
+    <div class="container">
+        <!-- MAIN FEED AREA -->
+        <div class="main-feed">
+            
+            <!-- POSTINGAN 1: Profil Perusahaan -->
+            <div class="card">
+                <div class="user-info">
+                    <img src="./img/profile_imporia.jpg" alt="Imporia Logo" class="profile-pic">
+                    <div>
+                        <strong>Imporia Jasa Impor</strong><br>
+                        <span style="font-size: 0.8em; color: gray;">15 menit lalu</span>
+                    </div>
+                </div>
+                <!-- Gambar dinamis akan dimasukkan di sini oleh JS -->
+                <img id="postImage1" src="" alt="Postingan Acak" class="post-image">
+                <div class="card-content">
+                    <h3>Memperkenalkan Imporia: Mitra Impor Fleksibel Anda!</h3>
+                    <p>Kami hadir untuk memudahkan Anda mengimpor barang dari luar negeri. Dengan Imporia, kuantitas bukan masalah! Kami layani pengiriman LCL (satuan) hingga FCL (kontainer penuh). Dapatkan panduan lengkap untuk importir pemula. 🚚📦</p>
+                    <p style="color: #0056b3;">#JasaImpor #ImporIndonesia #Logistik #UMKMGoGlobal</p>
+                </div>
+                <div class="post-footer">
+                    Suka · Komentar · Bagikan
+                </div>
+            </div>
+
+            <!-- POSTINGAN 2: Community Hub Highlight -->
+            <div class="card">
+                <div class="user-info">
+                    <img src="./img/profile_imporia.jpg" alt="Imporia Logo" class="profile-pic">
+                    <div>
+                        <strong>Imporia Jasa Impor</strong><br>
+                        <span style="font-size: 0.8em; color: gray;">2 jam lalu</span>
+                    </div>
+                </div>
+                 <!-- Gambar dinamis akan dimasukkan di sini oleh JS -->
+                <img id="postImage2" src="" alt="Postingan Acak" class="post-image">
+                <div class="card-content">
+                    <h3>Pusat Bantuan Importir Kini Hadir! 💡</h3>
+                    <p>Bingung soal HS Code atau Bea Cukai? Kunjungi Community Hub kami! Kami menyediakan panduan informasi lengkap dan FAQ untuk membantu Anda menavigasi regulasi impor Indonesia. Mari belajar bersama dan sukseskan impor Anda! </p>
+                    <a href="./subLinks/community_hub.html">Kunjungi Community Hub Imporia</a>
+                </div>
+                <div class="post-footer">
+                    Suka · Komentar · Bagikan
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SIDEBAR AREA (Info Perusahaan Statis) -->
+        <div class="sidebar">
+            <div class="card">
+                <div class="card-header">Tentang Imporia</div>
+                <div class="card-content">
+                    <p>Imporia menyediakan jasa impor barang luar ke dalam negeri dengan kuantitas fleksibel dan dukungan kuat untuk pemula.</p>
+                    <p>📞 (024) 123456</p>
+                    <p>📧 info@imporia.com</p>
+                    <a href="./index.html">Kunjungi Website Resmi</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Tautan Cepat</div>
+                <div class="card-content">
+                    <ul>
+                        <li><a href="./subLinks/about.html">Profil Perusahaan</a></li>
+                        <li><a href="./subLinks/contact.html">Kontak & Lokasi</a></li>
+                        <li><a href="./subLinks/community_hub.html">Pusat Bantuan</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <!-- ... footer seperti biasa ... -->
+    </footer>
+
+    <!-- SCRIPT JAVASCRIPT UNTUK ITERASI GAMBAR ACAK -->
+    <script>
+        // DAFTAR NAMA FILE GAMBAR ANDA DI FOLDER /img/
+        // Anda harus memperbarui daftar ini sesuai dengan nama file Anda yang sebenarnya.
+        const imageList = [
+            'image1.jpg',
+            'image2.png',
+            'team_office.jpg', // Contoh nama file dari tugas sebelumnya
+            'placeholder_hero.jpg' 
+            // Tambahkan nama file lain di sini
+        ];
+
+        function getRandomImage() {
+            const randomIndex = Math.floor(Math.random() * imageList.length);
+            return './img/' + imageList[randomIndex];
+        }
+
+        // Terapkan gambar acak ke postingan
+        document.getElementById('postImage1').src = getRandomImage();
+        document.getElementById('postImage2').src = getRandomImage();
+        
+    </script>
+
+</body>
+</html>
